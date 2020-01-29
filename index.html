@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!--TRAVAIL EFFECTUÉ PAR ALEXANDRE CORMIER POUR LE COURS IFT1142 SECTION A D'ANTONIO TAVARES
+    Cette page en HTML5 présente un menu de restaurant italien où l'utilisateur a l'option de 
+    sélectionner l'entrée et le repas principal. Le prix et le total de la facture est ensuite affiché
+    dans une alerte au bas de la page-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Restaurant</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="jumbotron m-auto">
+    <span id="nomEtudiant">Travail effectué par Alexandre Cormier</span>
+    <h1 class="display-3">Resto Di <span id="titreResto">Roma</span></h1>
+    <p class="lead">
+      Dégustez notre table d'hôte qui est offerte du jeudi au dimanche entre
+      17h et 22h.
+    </p>
+    <hr class="my-4" />
+  </div>
+
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card border-dark bg-light mb-3 " style="max-width: 30rem;">
+          <div class="card-body">
+            <img id="image_entree" style="height: 300px; width: 100%; display: block;" src="images/default.png"
+              alt="image" />
+            <h5 class="card-title">Sélectionnez votre entrée</h5>
+            <div class="form-group">
+              <label id="label_entrees" for="entrees">Faites votre choix</label><br />
+              <select class="form-control" id="entrees" onChange="displayVal(tabEntrees, list, image, prix)">
+              </select>
+            </div>
+            <span id="prix_entree"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card border-dark bg-light mb-3" style="max-width: 30rem;">
+          <div class="card-body">
+            <img id="image_repas" style="height: 300px; width: 100%; display: block;" src="images/repas.jpeg"
+              alt="image" />
+            <h5 class="card-title">Sélectionnez votre repas</h5>
+            <div class="form-group">
+              <label id="label_repas" for="repas">Faites votre choix</label><br />
+              <select class="form-control" id="repas" onChange="displayVal(tabRepas, list1, image1, prix1)">
+              </select>
+            </div>
+            <span id="prix_repas"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="alert" class="alert alert-light m-auto">
+      <span class="margin" id="prx1"></span>
+      <span class="margin" id="prx2"></span>
+      <span class="margin" id="prx3"></span><br />
+      <span id="message"><span id="messPart1">Buon </span>Apetito!</span>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
